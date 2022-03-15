@@ -59,7 +59,7 @@ export const useKanban = () => {
   }
 
   const handleDragEnter = (toListId: string) => {
-    if (drag) setDrag({ ...drag, toListId })
+    if (drag && drag.fromListId !== toListId) setDrag({ ...drag, toListId })
   }
 
   const handleDragEnd = () => {
